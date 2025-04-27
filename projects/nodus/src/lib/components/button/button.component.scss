@@ -1,0 +1,64 @@
+@use "../../../lib/styles/typography";
+@use "../../../lib/styles/spacing";
+@use "../../../lib/styles/colors";
+@use "../../../lib/styles/mixins";
+@use "../../../lib/styles/shadows";
+@use "sass:map";
+
+.btn {
+  font-weight: typography.$font-weight-bold;
+  border: none;
+  cursor: pointer;
+  padding: map.get(spacing.$spacers, 2) map.get(spacing.$spacers, 3);
+  @include mixins.rounded();
+  @include mixins.shadow();
+
+  &-primary {
+    background-color: colors.$primary;
+    color: colors.$light;
+  }
+
+  &-secondary {
+    background-color: colors.$secondary;
+    color: colors.$light;
+  }
+
+  &-success {
+    background-color: colors.$success;
+    color: colors.$light;
+  }
+
+  &-danger {
+    background-color: colors.$danger;
+    color: colors.$light;
+  }
+
+  &-warning {
+    background-color: colors.$warning;
+    color: colors.$dark;
+  }
+
+  &-info {
+    background-color: colors.$info;
+    color: colors.$dark;
+  }
+
+  &-sm {
+    font-size: typography.$font-size-sm;
+    padding: map.get(spacing.$spacers, 1) map.get(spacing.$spacers, 2);
+  }
+
+  &-md {
+    font-size: typography.$font-size-base;
+  }
+
+  &-lg {
+    font-size: typography.$font-size-lg;
+    padding: map.get(spacing.$spacers, 3) map.get(spacing.$spacers, 4);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

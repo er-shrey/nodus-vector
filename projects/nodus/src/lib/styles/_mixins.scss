@@ -1,0 +1,25 @@
+@use "shadows";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin rounded($radius: 0.375rem) {
+  border-radius: $radius;
+}
+
+@mixin shadow($size: base) {
+  @if $size == sm {
+    box-shadow: shadows.$box-shadow-sm;
+  } @else if $size == lg {
+    box-shadow: shadows.$box-shadow-lg;
+  } @else {
+    box-shadow: shadows.$box-shadow;
+  }
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}

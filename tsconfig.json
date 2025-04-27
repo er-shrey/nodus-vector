@@ -13,6 +13,11 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "paths": {
+      "nodus": [
+        "./dist/nodus"
+      ]
+    },
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
